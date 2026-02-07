@@ -258,6 +258,12 @@ main {
   margin: 0;
 }
 
+.site-footer .footer-name-cn {
+  font-size: 0.8em;
+  margin-top: 0.25rem;
+  color: var(--color-muted);
+}
+
 @media (max-width: 480px) {
   .nav {
     justify-content: flex-start;
