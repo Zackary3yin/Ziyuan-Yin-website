@@ -1,0 +1,269 @@
+/* 尹梓源个人网站 · 参考学术个人主页简洁布局 */
+
+:root {
+  --color-bg: #fafafa;
+  --color-text: #1a1a1a;
+  --color-muted: #555;
+  --color-link: #2563eb;
+  --color-link-hover: #1d4ed8;
+  --color-border: #e5e5e5;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+  --space: 1.25rem;
+  --max-width: 720px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+/* 头部导航 — 简洁单行 */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(250, 250, 250, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space) 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
+  justify-content: center;
+}
+
+.nav a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.nav a:hover {
+  color: var(--color-link);
+}
+
+/* 主内容 */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+/* 首屏：头像 + 姓名 + 一行身份 + Follow */
+.hero {
+  text-align: center;
+  padding: 3rem 0 3.5rem;
+}
+
+.hero-avatar {
+  display: block;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-border);
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: var(--color-muted);
+  margin: 0 0 0.5rem;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  margin: 0 0 1rem;
+}
+
+.follow {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0 0.5rem;
+}
+
+.follow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.follow-link:hover {
+  text-decoration: underline;
+}
+
+.follow-link i,
+.follow-link .icon-scholar {
+  font-size: 1.1em;
+  opacity: 0.9;
+}
+
+.follow-link .icon-scholar {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: -0.15em;
+}
+
+.follow-sep {
+  color: var(--color-border);
+  user-select: none;
+}
+
+/* 区块 */
+.section {
+  padding: 2rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.section h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  color: var(--color-text);
+}
+
+.section .content {
+  color: var(--color-text);
+}
+
+.section .content p {
+  margin: 0 0 1rem;
+}
+
+.section .content p:last-child {
+  margin-bottom: 0;
+}
+
+.section .content a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.section .content a:hover {
+  text-decoration: underline;
+}
+
+/* News 列表 */
+.news-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--color-text);
+}
+
+.news-list li {
+  margin-bottom: 0.75rem;
+}
+
+.news-list li:last-child {
+  margin-bottom: 0;
+}
+
+.news-list a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.news-list a:hover {
+  text-decoration: underline;
+}
+
+/* Research 列表 */
+.research-list {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1.25rem;
+  color: var(--color-text);
+}
+
+.research-list li {
+  margin-bottom: 0.75rem;
+}
+
+.research-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Publications 列表 */
+.pub-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  color: var(--color-text);
+}
+
+.pub-list li {
+  margin-bottom: 1.25rem;
+  padding-left: 0;
+}
+
+.pub-list li:last-child {
+  margin-bottom: 0;
+}
+
+.pub-list a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.pub-list a:hover {
+  text-decoration: underline;
+}
+
+/* 页脚 */
+.site-footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space) 1rem;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .nav {
+    justify-content: flex-start;
+  }
+
+  .hero {
+    padding: 2rem 0 2.5rem;
+  }
+}
