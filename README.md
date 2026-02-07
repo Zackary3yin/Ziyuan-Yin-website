@@ -53,16 +53,25 @@ npx serve .
 5. **Branch** 选 `main`，**Folder** 选 **/ (root)**，点 **Save**
 6. 等一两分钟，网站地址为：**https://zackary3yin.github.io/Ziyuan-Yin-website/**
 
-### 之后每次修改
+### 之后每次修改（推荐用脚本）
 
-1. 在本地改 `index.html`、`styles.css` 或其它文件
-2. 在项目目录执行：
+1. 在本地改 `index.html`、`styles.css` 或其它文件。
+2. 在项目目录执行**任一方式**：
+
+   **方式 A：用脚本（推荐）**
+   ```bash
+   ./push.sh
+   ```
+   或带一句说明：`./push.sh "更新 News 条目"`  
+   脚本会执行 `git add .` → `git commit` → `git push`，按提示回车即可。
+
+   **方式 B：手动命令**
    ```bash
    git add .
    git commit -m "简短说明你改了什么"
    git push
    ```
-3. 推送后 GitHub Pages 会自动重新部署，几分钟后刷新你的网站链接即可看到更新。
+3. 推送后 GitHub Pages 会自动重新部署，1～2 分钟后刷新 https://zackary3yin.github.io/Ziyuan-Yin-website/ 即可看到更新。
 
 ### 建议改一处 SEO
 
