@@ -22,8 +22,9 @@
     <span class="bg-shape bg-shape-3"></span>
   </div>
   <div class="site-wrap">
-  <header class="site-header">
-    <nav class="nav" aria-label="Main navigation">
+  <!-- 竖版（手机）：顶部导航 -->
+  <header class="site-header" aria-label="Navigation">
+    <nav class="nav nav-horizontal" aria-label="Main navigation">
       <a href="#about">About</a>
       <a href="#research">Research</a>
       <a href="#news">News</a>
@@ -32,27 +33,40 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero" id="home">
-      <img src="WechatIMG144891.jpg" alt="Zack (Ziyuan Yin) 尹梓源" class="hero-avatar" width="160" height="160">
-      <h1>Ziyuan Yin</h1>
-      <p class="hero-subtitle">Zack · 尹梓源</p>
-      <p class="tagline">MEng@Berkeley · BEng@CityU · Research@UCSF</p>
-      <div class="follow">
-        <a href="mailto:zy1001@berkeley.edu" class="follow-link" aria-label="Email"><i class="fa-solid fa-envelope"></i><span>Email</span></a>
-        <span class="follow-sep">·</span>
-        <a href="Ziyuan%20Yin%20resume%20%202025.pdf" class="follow-link" target="_blank" rel="noopener" aria-label="CV"><i class="fa-solid fa-file-pdf"></i><span>CV</span></a>
-        <span class="follow-sep">·</span>
-        <a href="https://scholar.google.com/citations?user=t5nGI6IAAAAJ&hl=en" class="follow-link" target="_blank" rel="noopener" aria-label="Google Scholar"><svg class="icon-scholar" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg><span>Google Scholar</span></a>
-        <span class="follow-sep">·</span>
-        <a href="https://github.com/Zackary3yin" class="follow-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i><span>GitHub</span></a>
-        <span class="follow-sep">·</span>
-        <a href="https://www.linkedin.com/in/ziyuan-yin-626544223/" class="follow-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
-        <span class="follow-sep">·</span>
-        <a href="https://www.instagram.com/zachary3yzy/" class="follow-link" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a>
-      </div>
-    </section>
+  <div class="page-layout">
+    <!-- 左侧栏（横版电脑显示）：头像 + 名字 + 链接 + 导航 -->
+    <aside class="sidebar" aria-label="Profile">
+      <section class="hero" id="home">
+        <img src="WechatIMG144891.jpg" alt="Zack (Ziyuan Yin) 尹梓源" class="hero-avatar" width="160" height="160">
+        <h1>Ziyuan Yin</h1>
+        <p class="hero-subtitle">Zack · 尹梓源</p>
+        <p class="tagline">MEng@Berkeley · BEng@CityU · Research@UCSF</p>
+        <div class="follow">
+          <a href="mailto:zy1001@berkeley.edu" class="follow-link" aria-label="Email"><i class="fa-solid fa-envelope"></i><span>Email</span></a>
+          <span class="follow-sep">·</span>
+          <a href="Ziyuan%20Yin%20resume%20%202025.pdf" class="follow-link" target="_blank" rel="noopener" aria-label="CV"><i class="fa-solid fa-file-pdf"></i><span>CV</span></a>
+          <span class="follow-sep">·</span>
+          <a href="https://scholar.google.com/citations?user=t5nGI6IAAAAJ&hl=en" class="follow-link" target="_blank" rel="noopener" aria-label="Google Scholar"><svg class="icon-scholar" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg><span>Google Scholar</span></a>
+          <span class="follow-sep">·</span>
+          <a href="https://github.com/Zackary3yin" class="follow-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i><span>GitHub</span></a>
+          <span class="follow-sep">·</span>
+          <a href="https://www.linkedin.com/in/ziyuan-yin-626544223/" class="follow-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+          <span class="follow-sep">·</span>
+          <a href="https://www.instagram.com/zachary3yzy/" class="follow-link" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a>
+        </div>
+      </section>
+      <nav class="nav nav-sidebar" aria-label="Page navigation">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#news">News</a>
+        <a href="#more">More</a>
+        <a href="Ziyuan%20Yin%20resume%20%202025.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </aside>
 
+    <!-- 右侧主内容 -->
+    <div class="content-column">
+  <main>
     <section class="section" id="about">
       <h2>About</h2>
       <div class="content">
@@ -106,6 +120,8 @@
     <p>© <span id="year"></span> Ziyuan Yin (Zack).</p>
     <p class="footer-name-cn">尹梓源</p>
   </footer>
+    </div>
+  </div>
   </div>
 
   <script>
