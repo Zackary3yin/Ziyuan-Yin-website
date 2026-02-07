@@ -122,6 +122,55 @@ body {
   background: rgba(250, 250, 250, 0.95);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color-border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+  padding: var(--space) 1rem;
+}
+
+.site-header .nav {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.lang-sep {
+  color: var(--color-border);
+  user-select: none;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  padding: 0.2em 0.4em;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.lang-btn:hover {
+  color: var(--color-link);
+}
+
+.lang-btn.active {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.lang-switcher-sidebar {
+  margin-bottom: 1rem;
 }
 
 .nav {
