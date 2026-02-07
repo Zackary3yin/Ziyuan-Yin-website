@@ -114,6 +114,10 @@ body {
   display: none;
 }
 
+.sidebar .lang-switcher-sidebar {
+  display: none;
+}
+
 /* 头部导航 — 手机横条 */
 .site-header {
   position: sticky;
@@ -139,34 +143,37 @@ body {
 .lang-switcher {
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.35rem;
   font-size: 0.85rem;
   color: var(--color-muted);
+  font-weight: 400;
 }
 
 .lang-sep {
-  color: var(--color-border);
+  color: rgba(0, 0, 0, 0.2);
   user-select: none;
 }
 
 .lang-btn {
   background: none;
   border: none;
-  padding: 0.2em 0.4em;
+  padding: 0;
   font-size: inherit;
   font-family: inherit;
+  font-weight: inherit;
   color: inherit;
   cursor: pointer;
-  border-radius: 3px;
+  text-decoration: none;
+  opacity: 0.7;
 }
 
 .lang-btn:hover {
-  color: var(--color-link);
+  opacity: 1;
 }
 
 .lang-btn.active {
-  color: var(--color-text);
-  font-weight: 600;
+  opacity: 1;
+  font-weight: 400;
 }
 
 .lang-switcher-sidebar {
@@ -246,6 +253,10 @@ main {
 
   .sidebar .follow-sep {
     display: none;
+  }
+
+  .sidebar .lang-switcher-sidebar {
+    display: inline-flex;
   }
 
   .sidebar .nav-sidebar {
