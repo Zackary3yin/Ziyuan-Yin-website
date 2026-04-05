@@ -10,6 +10,15 @@
   <meta property="og:title" content="Zack (尹梓源 Ziyuan Yin) | Personal Website">
   <meta property="og:description" content="Zack — Ziyuan Yin. Research on how the brain constructs and represents meaning. MEng@Berkeley, Research@UCSF.">
   <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Ziyuan Yin",
+    "alternateName": ["尹梓源", "Zack"],
+    "url": "https://zackary3yin.github.io/Ziyuan-Yin-website/"
+  }
+  </script>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="canonical" href="https://zackary3yin.github.io/Ziyuan-Yin-website/">
@@ -29,7 +38,7 @@
       <a href="#research" data-i18n="nav_research">Research</a>
       <a href="#news" data-i18n="nav_news">News</a>
       <a href="#more" data-i18n="nav_more">More</a>
-      <a href="Ziyuan%20Yin%20resume%20%202025.pdf" target="_blank" rel="noopener">CV</a>
+      <button type="button" class="nav-cv-btn cv-request-open" data-i18n="nav_cv">Request CV</button>
     </nav>
     <div class="lang-switcher" aria-label="Language">
       <button type="button" class="lang-btn active" data-lang="en">English</button>
@@ -47,9 +56,9 @@
         <p class="hero-subtitle">Zack · 尹梓源</p>
         <p class="tagline">MEng@Berkeley · BEng@CityU · Research@UCSF</p>
         <div class="follow">
-          <a href="mailto:zy1001@berkeley.edu" class="follow-link" aria-label="Email"><i class="fa-solid fa-envelope"></i><span>Email</span></a>
+          <a href="#" class="follow-link obf-mail" aria-label="Email" data-b64="enkxMDAxQGJlcmtlbGV5LmVkdQ=="><i class="fa-solid fa-envelope"></i><span>Email</span></a>
           <span class="follow-sep">·</span>
-          <a href="Ziyuan%20Yin%20resume%20%202025.pdf" class="follow-link" target="_blank" rel="noopener" aria-label="CV"><i class="fa-solid fa-file-pdf"></i><span>CV</span></a>
+          <button type="button" class="follow-link cv-request-open" aria-label="Request CV"><i class="fa-solid fa-file-pdf"></i><span data-i18n="nav_cv">Request CV</span></button>
           <span class="follow-sep">·</span>
           <a href="https://scholar.google.com/citations?user=t5nGI6IAAAAJ&hl=en" class="follow-link" target="_blank" rel="noopener" aria-label="Google Scholar"><svg class="icon-scholar" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg><span>Google Scholar</span></a>
           <span class="follow-sep">·</span>
@@ -70,7 +79,7 @@
         <a href="#research" data-i18n="nav_research">Research</a>
         <a href="#news" data-i18n="nav_news">News</a>
         <a href="#more" data-i18n="nav_more">More</a>
-        <a href="Ziyuan%20Yin%20resume%20%202025.pdf" target="_blank" rel="noopener">CV</a>
+        <button type="button" class="nav-cv-btn nav-sidebar-cv cv-request-open" data-i18n="nav_cv">Request CV</button>
       </nav>
     </aside>
 
@@ -109,7 +118,7 @@
     <section class="section" id="more">
       <h2 data-i18n="section_more">More</h2>
       <div class="content">
-        <p id="more-p">If you work on neural semantics, semantic alignment, cognitive modeling, or information equity, I’d be glad to connect. <a href="mailto:zy1001@berkeley.edu">zy1001@berkeley.edu</a>. Full background: <a href="Ziyuan%20Yin%20resume%20%202025.pdf" target="_blank" rel="noopener">CV</a>; publications: <a href="https://scholar.google.com/citations?user=t5nGI6IAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
+        <p id="more-p">If you work on neural semantics, semantic alignment, cognitive modeling, or information equity, I’d be glad to connect. <a class="obf-mail obf-mail-fill" href="#" data-b64="enkxMDAxQGJlcmtlbGV5LmVkdQ=="></a> · Full background: <button type="button" class="btn-link cv-request-open">Request CV</button>; publications: <a href="https://scholar.google.com/citations?user=t5nGI6IAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
       </div>
     </section>
   </main>
@@ -122,6 +131,32 @@
   </div>
   </div>
 
+  <div id="cv-modal" class="modal-overlay" hidden aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cv-modal-title">
+      <button type="button" id="cv-modal-close-btn" class="modal-close cv-modal-close" aria-label="Close">&times;</button>
+      <h3 id="cv-modal-title" data-i18n="cv_modal_title">Request my CV</h3>
+      <p class="modal-intro" data-i18n="cv_modal_intro">Submit a short request. I review each one and email you the CV if appropriate—there is no automatic download.</p>
+      <div id="cv-modal-form-panel">
+        <form id="cv-request-form" novalidate>
+          <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_subject" value="[Site] CV request — Ziyuan Yin">
+          <label for="cv-who" data-i18n="cv_modal_who">Who are you? <span class="req">*</span></label>
+          <input id="cv-who" name="who_are_you" type="text" required autocomplete="organization" data-i18n-placeholder="cv_modal_who_ph" placeholder="e.g. PhD student at …, hiring manager at …">
+          <label for="cv-email" data-i18n="cv_modal_email">Your email <span class="req">*</span></label>
+          <input id="cv-email" name="email" type="email" required autocomplete="email" data-i18n-placeholder="cv_modal_email_ph" placeholder="you@example.com">
+          <label for="cv-purpose" data-i18n="cv_modal_purpose">What would you like to do? <span class="opt">(optional)</span></label>
+          <textarea id="cv-purpose" name="purpose" rows="3" data-i18n-placeholder="cv_modal_purpose_ph" placeholder="e.g. collaboration, internship, reference check …"></textarea>
+          <button type="submit" class="modal-submit" data-i18n="cv_modal_submit">Send request</button>
+        </form>
+      </div>
+      <div id="cv-modal-success" class="modal-success" hidden>
+        <p data-i18n="cv_modal_success">Request sent. I’ll reply by email when I can.</p>
+        <button type="button" class="modal-submit cv-modal-close" data-i18n="cv_modal_close">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="contact-obf.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -134,6 +169,19 @@
         nav_research:  { en: 'Research', zh: '研究' },
         nav_news:      { en: 'News', zh: '動態' },
         nav_more:      { en: 'More', zh: '更多' },
+        nav_cv:        { en: 'Request CV', zh: '申請履歷' },
+        cv_modal_title: { en: 'Request my CV', zh: '申請履歷副本' },
+        cv_modal_intro: { en: 'Submit a short request. I review each one and email you the CV if appropriate—there is no automatic download.', zh: '請送出簡短申請。我會逐筆審閱，若適合再以電郵寄送履歷；本站不提供一鍵下載。' },
+        cv_modal_who: { en: 'Who are you? *', zh: '你是誰？（必填）' },
+        cv_modal_who_ph: { en: 'e.g. PhD student at …, hiring manager at …', zh: '例：某校博士生、某公司招聘負責人…' },
+        cv_modal_email: { en: 'Your email *', zh: '你的電郵（必填）' },
+        cv_modal_email_ph: { en: 'you@example.com', zh: 'you@example.com' },
+        cv_modal_purpose: { en: 'What would you like to do? (optional)', zh: '你想做什麼？（選填）' },
+        cv_modal_purpose_ph: { en: 'e.g. collaboration, internship, reference check …', zh: '例：合作、實習、推薦信…' },
+        cv_modal_submit: { en: 'Send request', zh: '送出申請' },
+        cv_modal_success: { en: 'Request sent. I’ll reply by email when I can.', zh: '已送出。我會在方便時以電郵回覆。' },
+        cv_modal_close: { en: 'Close', zh: '關閉' },
+        cv_modal_close_aria: { en: 'Close', zh: '關閉' },
         section_about: { en: 'About', zh: '關於' },
         section_research: { en: 'Research', zh: '研究' },
         section_news:  { en: 'News', zh: '動態' },
@@ -148,8 +196,8 @@
         news_li2: { en: '<strong>[2025]</strong> Co-first author, manuscript under review: “Time-aware Multiscale Hyperexcitability Trajectory Modeling in Cardiac Arrest.”', zh: '<strong>[2025]</strong> 共同第一作者，論文在審中：Time-aware Multiscale Hyperexcitability Trajectory Modeling in Cardiac Arrest。' },
         news_li3: { en: '<strong>[2024 – 2025]</strong> MEng in Bioengineering (Neuroengineering / Bioinformatics & Computational Biology), UC Berkeley.', zh: '<strong>[2024 – 2025]</strong> 加州大學柏克萊分校生物工程碩士（神經工程 / 生物資訊學）。' },
         more_html: {
-          en: 'If you work on neural semantics, semantic alignment, cognitive modeling, or information equity, I’d be glad to connect. <a href="mailto:zy1001@berkeley.edu">zy1001@berkeley.edu</a>. Full background: <a href="Ziyuan%20Yin%20resume%20%202025.pdf" target="_blank" rel="noopener">CV</a>; publications: <a href="https://scholar.google.com/citations?user=t5nGI6IAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.',
-          zh: '若你從事神經語義、語義對齊、認知建模或資訊公平相關研究，歡迎與我聯繫。<a href="mailto:zy1001@berkeley.edu">zy1001@berkeley.edu</a>。完整背景見<a href="Ziyuan%20Yin%20resume%20%202025.pdf" target="_blank" rel="noopener">履歷</a>；論文見<a href="https://scholar.google.com/citations?user=t5nGI6IAAAAJ&hl=en" target="_blank" rel="noopener">Google 學術</a>。'
+          en: 'If you work on neural semantics, semantic alignment, cognitive modeling, or information equity, I’d be glad to connect. <a class="obf-mail obf-mail-fill" href="#" data-b64="enkxMDAxQGJlcmtlbGV5LmVkdQ=="></a> · Full background: <button type="button" class="btn-link cv-request-open">Request CV</button>; publications: <a href="https://scholar.google.com/citations?user=t5nGI6IAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.',
+          zh: '若你從事神經語義、語義對齊、認知建模或資訊公平相關研究，歡迎與我聯繫。<a class="obf-mail obf-mail-fill" href="#" data-b64="enkxMDAxQGJlcmtlbGV5LmVkdQ=="></a> · 完整背景請<button type="button" class="btn-link cv-request-open">申請履歷</button>；論文見<a href="https://scholar.google.com/citations?user=t5nGI6IAAAAJ&hl=en" target="_blank" rel="noopener">Google 學術</a>。'
         },
         footer_copyright: { en: 'Ziyuan Yin (Zack).', zh: 'Ziyuan Yin (Zack).' }
       };
@@ -160,6 +208,14 @@
         document.querySelectorAll('[data-i18n]').forEach(function(el) {
           var key = el.getAttribute('data-i18n');
           if (t[key] && t[key][lang]) el.textContent = t[key][lang];
+        });
+        var cvCloseTop = document.getElementById('cv-modal-close-btn');
+        if (cvCloseTop && t.cv_modal_close_aria && t.cv_modal_close_aria[lang]) {
+          cvCloseTop.setAttribute('aria-label', t.cv_modal_close_aria[lang]);
+        }
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+          var key = el.getAttribute('data-i18n-placeholder');
+          if (t[key] && t[key][lang]) el.setAttribute('placeholder', t[key][lang]);
         });
         var moreEl = document.getElementById('more-p');
         if (moreEl && t.more_html && t.more_html[lang]) moreEl.innerHTML = t.more_html[lang];
@@ -175,6 +231,9 @@
           btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
         });
         try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+        if (typeof window.wireObfuscatedContact === 'function') {
+          window.wireObfuscatedContact();
+        }
       }
 
       var saved = localStorage.getItem(STORAGE_KEY);
@@ -187,5 +246,6 @@
       });
     })();
   </script>
+  <script src="cv-request.js"></script>
 </body>
 </html>
